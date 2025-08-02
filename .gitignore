@@ -1,7 +1,0 @@
-__pycache__/
-*.pyc
-/pyproject.toml
-/uv.lock
-/.python-version
-.gitignore/
-*.gitignore
