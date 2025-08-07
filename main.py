@@ -16,7 +16,7 @@ def main():
     screen     : object = pygame.display.set_mode((SCREEN_WIDTH,
                                                SCREEN_HEIGHT))
     
-    background : object = pygame.image.load("Ghetto.png").convert()
+    background : object = pygame.image.load("images/Ghetto.png").convert()
     
     updateable : object = pygame.sprite.Group()
     drawable   : object = pygame.sprite.Group()

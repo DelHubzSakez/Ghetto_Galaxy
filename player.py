@@ -8,7 +8,7 @@ class Player(CircleShape):
         self.rotation : int    = 0
         self.timer    : int    = 0
         self.shots    : object = pygame.sprite.Group()
-        self.og_image : object = pygame.image.load("ship.png").convert_alpha()
+        self.og_image : object = pygame.image.load("images/ship.png").convert_alpha()
         self.og_image : object = pygame.transform.scale(self.og_image, (64, 64))
         self.image    : object = self.og_image
         super().__init__(x , y, PLAYER_RADIUS)
