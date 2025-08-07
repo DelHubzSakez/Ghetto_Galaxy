@@ -8,14 +8,21 @@ class Player(CircleShape):
         self.rotation : int    = 0
         self.timer    : int    = 0
         self.shots    : object = pygame.sprite.Group()
+        self.og_image : object = pygame.image.load("ship.png").convert_alpha()
+        self.og_image : object = pygame.transform.scale(self.og_image, (64, 64))
+        self.image    : object = self.og_image
         super().__init__(x , y, PLAYER_RADIUS)
+        self.rect = self.image.get_rect(center = self.position)
     
     def rotate(self : object, dt : int)->None:
         self.rotation += PLAYER_TURN_SPEED * dt
 
     def update(self, dt):
         keys = pygame.key.get_pressed()
-        self.timer -= dt 
+        self.timer -= dt
+        self.image = pygame.transform.rotate(self.og_image, -self.rotation + 180)
+        self.rect = self.image.get_rect(center = self.position)
+ 
 
         if keys[pygame.K_a]:
             self.rotate(-dt)
@@ -50,6 +57,10 @@ class Player(CircleShape):
         self.timer        : float  = PLAYER_SHOOT_COOLDOWN
 
         self.shots.add(new_shot)
+
+    def draw(self, screen):
+        screen.blit(self.image, self.rect)
+
 
             
          

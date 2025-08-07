@@ -16,6 +16,8 @@ def main():
     screen     : object = pygame.display.set_mode((SCREEN_WIDTH,
                                                SCREEN_HEIGHT))
     
+    background : object = pygame.image.load("Ghetto.png").convert()
+    
     updateable : object = pygame.sprite.Group()
     drawable   : object = pygame.sprite.Group()
     asteroids  : object = pygame.sprite.Group()
@@ -60,7 +62,7 @@ def main():
                         return    
                                 
         
-        screen.fill((0, 0, 0))
+        screen.blit(background, (0, 0))
         
         if game_state == "menu":
             menu.draw(screen)
@@ -84,7 +86,7 @@ def main():
                         s.kill() 
 
         elif game_state == "game_over":
-            game_over_surf    = game_over.render("GAME OVER", True, (128, 0, 0))
+            game_over_surf    = game_over.render("YOU SUCK", True, (128, 0, 0))
             text_rect         = game_over_surf.get_rect()
             text_rect.centerx = (SCREEN_WIDTH / 2)
             text_rect.centery = (SCREEN_HEIGHT/ 2)
