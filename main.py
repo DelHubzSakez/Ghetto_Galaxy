@@ -86,7 +86,8 @@ def main():
                         s.kill() 
 
         elif game_state == "game_over":
-            game_over_surf    = game_over.render("YOU SUCK", True, (128, 0, 0))
+            game_over_font = pygame.font.Font("fonts/PressStart2P-Regular.ttf", 74)
+            game_over_surf    = game_over_font.render("YOU SUCK", True, (102, 255, 0))
             text_rect         = game_over_surf.get_rect()
             text_rect.centerx = (SCREEN_WIDTH / 2)
             text_rect.centery = (SCREEN_HEIGHT/ 2)

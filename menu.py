@@ -8,7 +8,7 @@ class Menu():
         self.options  = option_list
         self.selected = init_selection_index
         
-        self.font            = pygame.font.Font(None, 74) 
+        self.font            = pygame.font.Font("fonts/PressStart2P-Regular.ttf", 74) 
         self.text_color      = (255, 255, 255) 
         self.highlight_color = (102,255,0) 
         self.line_spacing    = 80
